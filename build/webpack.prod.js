@@ -11,6 +11,7 @@ const config = function(env) {
     stats: {
       errors: true, errorDetails: true, warnings: false, chunks: false
     },
+    // devtool: 'source-map',
     plugins: [
       new Webpack.LoaderOptionsPlugin({
         minimize: true,
@@ -19,11 +20,11 @@ const config = function(env) {
       new Webpack.DefinePlugin({
         'process.env': {'NODE_ENV': JSON.stringify('production')}
       }),
-      new Webpack.optimize.UglifyJsPlugin({
-        beautify: false,
-        compress: true,
-        comments: false
-      }),
+      // new Webpack.optimize.UglifyJsPlugin({
+      //   beautify: false,
+      //   compress: true,
+      //   comments: false
+      // }),
       new Webpack.NoEmitOnErrorsPlugin(),
       new Webpack.HashedModuleIdsPlugin(),
       new ChunkManifestPlugin({

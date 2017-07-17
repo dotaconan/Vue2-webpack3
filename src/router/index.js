@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/views/Home'
-import About from '@/views/About'
-import Shop from '@/views/Shop'
+
+const Home = () => import('@/views/Home.js')
+const About = () => import('@/views/About.js')
+const Shop = () => import('@/views/Shop.js')
 
 Vue.use(Router)
 

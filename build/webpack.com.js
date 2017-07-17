@@ -25,6 +25,7 @@ const config = {
   output: {
     filename: 'js/[name].[chunkhash:8].js',
     path: Path.resolve(__dirname, '../dist'),
+    // sourceMapFilename: "./bundle.js.map",
     chunkFilename: "js/[name].[chunkhash:8].js",
     publicPath: "/"
   },
@@ -63,11 +64,10 @@ const config = {
         exclude: /node_modules/,
         use: ['happypack/loader?id=happybabel']
       }, {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|svg)(\?\S*)?$/i,
         use: ['url-loader?limit=10000&name=[name].[ext]&outputPath=images/']
       }, {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        exclude: /node_modules/,
+        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
         use: ['url-loader?limit=30000&name=[name].[ext]&outputPath=fonts/']
       }
     ]
@@ -86,7 +86,7 @@ const config = {
       name: 'manifest',
       filename: 'manifest.js'
     }),
-    new HtmlWebpackPlugin({title: 'My Webpack3', filename: 'index.html', template: 'src/index.html'}),
+    new HtmlWebpackPlugin({title: 'Vue2 App', filename: 'index.html', template: 'src/index.html'}),
     ExtractLess,
     new Webpack.optimize.ModuleConcatenationPlugin(),
     new HappyPack({

@@ -4,7 +4,7 @@ const Webpack = require('webpack');
 const Merge = require('webpack-merge');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const CommonConfig = require('./webpack.com.js');
-const PORT = 8080;
+const PORT = 9000;
 
 const config = function(env) {
   return Merge(CommonConfig, {

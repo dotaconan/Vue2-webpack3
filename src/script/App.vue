@@ -1,16 +1,22 @@
 <template>
   <div id="app">
+    <menu-nav></menu-nav>
     <h1>{{msg}}</h1>
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/shop">Shop</router-link>
-    <router-view></router-view>
+    <transition name="fade" mode="out-in" appear>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
 <script>
+import Menu from '../components/Menu';
 export default {
   name: 'App',
+  components: {
+    'menu-nav': Menu
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -19,35 +25,8 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-
-.router-link-exact-active {
-  color: rgb(4, 120, 57);
-}
+<style lang="less">
+@import '../style/index.less';
+@import '../style/app.less';
+@import '../style/home-v.less';
 </style>

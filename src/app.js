@@ -1,9 +1,15 @@
-// import 'whatwg-fetch';
+// import 'babel-polyfill'
+
 import Vue from 'vue'
 import App from './script/App'
 import router from './router'
+// import ElementUI from 'element-ui'
+import {Menu, MenuItem} from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 
-import './style/index.less'
+// Vue.use(ElementUI)
+Vue.use(Menu)
+Vue.use(MenuItem)
 
 Vue.config.productionTip = false
 
