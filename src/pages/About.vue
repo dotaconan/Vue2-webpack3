@@ -1,6 +1,5 @@
-export default {
-  name: 'About',
-  template: `<div>
+<template>
+  <div>
     <h2>{{title}}</h2>
     <about-btn></about-btn>
     <ul>
@@ -8,9 +7,13 @@ export default {
         {{ item }}
       </li>
     </ul>
-  </div>`,
+  </div>
+</template>
+<script>
+export default {
+  name: 'About',
   components: {
-    'about-btn': () => import('../components/ButtonAbout.vue')
+    'about-btn': resolve => require(['../components/ButtonAbout.vue'], resolve)
   },
   data () {
     return {
@@ -21,3 +24,6 @@ export default {
     }
   }
 }
+</script>
+<style lang="less" scoped>
+</style>

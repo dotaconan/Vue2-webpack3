@@ -5,10 +5,10 @@ import Router from 'vue-router'
 // import About from '@/pages/About.js'
 // import Shop from '@/pages/Shop.js'
 
-const Home = resolve => require(['@/pages/Home.js'], resolve)
-const About = resolve => require(['@/pages/About.js'], resolve)
-const Shop = resolve => require(['@/pages/Shop.js'], resolve)
-const NotFoundComponent = resolve => require(['@/pages/NotFoundComponent.js'], resolve)
+const Home = resolve => require(['@/pages/Home'], resolve)
+const About = resolve => require(['@/pages/About'], resolve)
+const Shop = resolve => require(['@/pages/Shop'], resolve)
+const NotFoundComponent = resolve => require(['@/pages/NotFoundComponent'], resolve)
 
 Vue.use(Router)
 
