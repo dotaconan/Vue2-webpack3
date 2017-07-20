@@ -1,15 +1,18 @@
 <template>
-  <div>
-    <h2>NotFoundComponent</h2>
+  <div class="kcgk">
+    <h2>矿场概况</h2>
   </div>
 </template>
 <script>
 export default {
-  name: "NotFoundComponent"
+  name: "",
+  data: () => ({
+
+  })
 }
 </script>
 <style lang="less" scoped>
-div {
+.kcgk {
   padding-top: 30px;
   text-align: center;
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{msg}}</h2>
+    <h2>意见反馈</h2>
   </div>
 </template>
 <script>
@@ -14,4 +14,8 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+div {
+  padding-top: 30px;
+  text-align: center;
+}
 </style>

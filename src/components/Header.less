@@ -1,0 +1,41 @@
+.Header {
+  height: 60px;
+  background: @dark;
+  line-height: 60px;
+  padding: 0px 40px;
+  overflow: hidden;
+  .logo {
+    display: inline-block;
+    height: 60px;
+    float: left;
+    a {
+      width: 159px;
+      height: 21px;
+      margin-top: 18px;
+      display: inline-block;
+      background: url('../assets/images/logo.png') no-repeat;
+    }
+  }
+  .el-menu {
+    border-left: 1px solid @dark-light;
+    float: right;
+    display: inline-block;
+  }
+  .el-menu-item {
+    font-size: 14px;
+    font-weight: bold;
+    color: @base;
+    padding: 0px;
+    a {
+      padding: 0px 30px;
+      display: inline-block;
+      border-right: 1px solid @dark-light;
+    }
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: all 0.3s ease
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0
+  }
+}

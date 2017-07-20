@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <home-btn></home-btn>
     <h1>{{ msg }}</h1>
     <h2 class="welcome-text">Home Page!</h2>
     <button type="button" name="button" @click="handleClick">click请求！</button>
@@ -11,7 +10,6 @@
 export default {
   name: "Home",
   components: {
-    'home-btn': resolve => require(['../components/ButtonHome.vue'], resolve)
   },
   methods: {
     handleClick() {
@@ -31,4 +29,12 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+@import '../style/variable/index.less';
+.home {
+  padding-top: 30px;
+  text-align: center;
+  .welcome-text {
+    color: #42b983;
+  }
+}
 </style>

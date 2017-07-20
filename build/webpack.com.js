@@ -10,6 +10,7 @@ const vueLoaderConfig = require('./vue-loader.conf');
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 // 根据NODE_ENV来启用
 const ExtractLess = new ExtractTextPlugin({
+  allChunks: true,
   filename: "style/style.[contenthash:8].css",
   disable: process.env.NODE_ENV === "development"
 });
@@ -34,6 +35,7 @@ const config = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      '~': resolve('src/style/variable'),
       'moment': 'moment/min/moment.min.js'
     },
     extensions: ['.js', '.vue']
@@ -65,10 +67,10 @@ const config = {
         use: ['happypack/loader?id=happybabel']
       }, {
         test: /\.(jpe?g|png|gif|svg)(\?\S*)?$/i,
-        use: ['url-loader?limit=10000&name=[name].[ext]&outputPath=images/']
+        use: ['url-loader?limit=10000&name=[name].[ext]&outputPath=assets/images/']
       }, {
         test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-        use: ['url-loader?limit=30000&name=[name].[ext]&outputPath=fonts/']
+        use: ['url-loader?limit=30000&name=[name].[ext]&outputPath=assets/fonts/']
       }
     ]
   },

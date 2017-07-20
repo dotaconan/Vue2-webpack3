@@ -1,11 +1,16 @@
 <template>
   <div>
-    <h2>NotFoundComponent</h2>
+    <h2>架构管理</h2>
   </div>
 </template>
 <script>
 export default {
-  name: "NotFoundComponent"
+  name: 'Shop',
+  data () {
+    return {
+      msg: 'Shop page!!'
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

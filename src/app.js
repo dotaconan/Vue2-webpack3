@@ -1,14 +1,20 @@
 // import 'babel-polyfill'
 import Vue from 'vue'
-import App from './script/App'
+import App from './pages/App.vue'
 import router from './router'
 import VueResource from 'vue-resource'
-import {Menu, MenuItem} from 'element-ui'
+import {
+  Menu, MenuItem, MenuItemGroup, Icon, Row, Col, Submenu
+} from 'element-ui'
+import utils from './utils/utils'
 import 'element-ui/lib/theme-default/index.css'
 
-Vue.use(VueResource)
-Vue.use(Menu)
-Vue.use(MenuItem)
+import './style/index.less'
+
+utils.useElement(
+  Vue, VueResource,
+  Menu, MenuItem, MenuItemGroup, Icon, Row, Col, Submenu
+)
 
 Vue.config.productionTip = false
 

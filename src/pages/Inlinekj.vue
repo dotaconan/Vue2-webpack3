@@ -1,19 +1,10 @@
 <template>
-  <div>
-    <h2>{{title}}</h2>
-    <about-btn></about-btn>
-    <ul>
-      <li v-for="item in lists">
-        {{ item }}
-      </li>
-    </ul>
-  </div>
+  <h2>在线矿机</h2>
 </template>
 <script>
 export default {
   name: 'About',
   components: {
-    'about-btn': resolve => require(['../components/ButtonAbout.vue'], resolve)
   },
   data () {
     return {
@@ -26,4 +17,8 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+h2 {
+  padding-top: 30px;
+  text-align: center;
+}
 </style>
